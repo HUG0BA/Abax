@@ -1,11 +1,11 @@
-import PositionalNotation from "@components/PositionalNotation";
+import PositionalNotation from '@components/PositionalNotation'
 
 export default {
-  component: PositionalNotation,
-};
+  component: PositionalNotation
+}
 
 export const Normal = {
   args: {
-    positionValue: "U",
-  },
-};
+    positionValue: 'U'
+  }
+}

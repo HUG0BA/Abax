@@ -1,8 +1,8 @@
-import Key from "@components/Key.jsx";
-import useAbaxContext from "@hooks/useAbaxContext";
+import Key from '@components/Key.jsx'
+import useAbaxContext from '@hooks/useAbaxContext'
 
-function OperationKey({ name, symbol }) {
-  const { onOperationKeyClick } = useAbaxContext();
+function OperationKey ({ name, symbol }) {
+  const { onOperationKeyClick } = useAbaxContext()
 
   return (
     <Key
@@ -10,7 +10,7 @@ function OperationKey({ name, symbol }) {
       symbol={symbol}
       onKeyClick={() => onOperationKeyClick(symbol)}
     />
-  );
+  )
 }
 
-export default OperationKey;
+export default OperationKey

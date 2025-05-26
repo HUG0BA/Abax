@@ -1,7 +1,7 @@
-import KeyBoard from "@components/KeyBoard.jsx";
+import KeyBoard from '@components/KeyBoard.jsx'
 
 export default {
-  component: KeyBoard,
-};
+  component: KeyBoard
+}
 
-export const Normal = {};
+export const Normal = {}

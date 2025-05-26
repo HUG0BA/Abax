@@ -1,8 +1,8 @@
-import FrameWithPositionalNotation from "@components/FrameWithPositionalNotation";
+import FrameWithPositionalNotation from '@components/FrameWithPositionalNotation'
 
 export default {
-  component: FrameWithPositionalNotation,
-};
+  component: FrameWithPositionalNotation
+}
 
 const beadRods = [
   [
@@ -12,7 +12,7 @@ const beadRods = [
     { id: 4, isActive: false },
     { id: 5, isActive: false },
     { id: 6, isActive: false },
-    { id: 7, isActive: false },
+    { id: 7, isActive: false }
   ],
   [
     { id: 1, isActive: false },
@@ -21,7 +21,7 @@ const beadRods = [
     { id: 4, isActive: false },
     { id: 5, isActive: false },
     { id: 6, isActive: true },
-    { id: 7, isActive: true },
+    { id: 7, isActive: true }
   ],
   [
     { id: 1, isActive: true },
@@ -30,7 +30,7 @@ const beadRods = [
     { id: 4, isActive: true },
     { id: 5, isActive: true },
     { id: 6, isActive: true },
-    { id: 7, isActive: true },
+    { id: 7, isActive: true }
   ],
   [
     { id: 1, isActive: false },
@@ -39,7 +39,7 @@ const beadRods = [
     { id: 4, isActive: false },
     { id: 5, isActive: false },
     { id: 6, isActive: false },
-    { id: 7, isActive: false },
+    { id: 7, isActive: false }
   ],
   [
     { id: 1, isActive: false },
@@ -48,7 +48,7 @@ const beadRods = [
     { id: 4, isActive: false },
     { id: 5, isActive: false },
     { id: 6, isActive: true },
-    { id: 7, isActive: true },
+    { id: 7, isActive: true }
   ],
   [
     { id: 1, isActive: true },
@@ -57,15 +57,15 @@ const beadRods = [
     { id: 4, isActive: true },
     { id: 5, isActive: true },
     { id: 6, isActive: true },
-    { id: 7, isActive: true },
-  ],
-];
+    { id: 7, isActive: true }
+  ]
+]
 
-const positionValues = ["U", "D", "C", "M"];
+const positionValues = ['U', 'D', 'C', 'M']
 
 export const Normal = {
   args: {
     beadRods,
-    positionValues,
-  },
-};
+    positionValues
+  }
+}

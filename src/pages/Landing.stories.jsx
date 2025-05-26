@@ -1,7 +1,7 @@
-import Landing from "@pages/Landing.jsx";
+import Landing from '@pages/Landing.jsx'
 
 export default {
-    component: Landing,
-};
+  component: Landing
+}
 
-export const Normal = {};
+export const Normal = {}

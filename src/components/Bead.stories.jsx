@@ -1,29 +1,29 @@
-import Bead from "@components/Bead.jsx";
+import Bead from '@components/Bead.jsx'
 
 export default {
-    component: Bead,
-};
+  component: Bead
+}
 
 export const Inactive = {
-    args: {
-        variant: "inactive",
-    },
-};
+  args: {
+    variant: 'inactive'
+  }
+}
 
 export const Active = {
-    args: {
-        variant: "active",
-    },
-};
+  args: {
+    variant: 'active'
+  }
+}
 
 export const Divider = {
-    args: {
-        variant: "divider",
-    },
-};
+  args: {
+    variant: 'divider'
+  }
+}
 
 export const Finalizer = {
-    args: {
-        variant: "finalizer",
-    },
-};
+  args: {
+    variant: 'finalizer'
+  }
+}

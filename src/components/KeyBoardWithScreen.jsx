@@ -1,23 +1,18 @@
-import KeyBoard from "@components/KeyBoard";
-import useAbaxContext from "@hooks/useAbaxContext";
-import style from "@components/KeyBoardWithScreen.module.css";
+import KeyBoard from '@components/KeyBoard'
+import useAbaxContext from '@hooks/useAbaxContext'
+import style from '@components/KeyBoardWithScreen.module.css'
 
-function KeyBoardWithScreen() {
+function KeyBoardWithScreen () {
   const { currentNumber, currentResult, currentDisplay, currentOperation } =
-    useAbaxContext();
-
+    useAbaxContext()
   return (
     <div className={style.normal}>
       <div>
         <p>Display {currentDisplay}</p>
-        <p>
-          {currentResult ?? ""} {currentOperation} {currentNumber ?? ""}
-        </p>
+        <p> {currentResult ?? ''} {currentOperation} {currentNumber ?? ''} </p>
       </div>
-
       <KeyBoard />
-    </div>
-  );
+    </div>)
 }
 
-export default KeyBoardWithScreen;
+export default KeyBoardWithScreen

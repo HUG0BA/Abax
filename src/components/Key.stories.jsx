@@ -1,12 +1,12 @@
-import Key from "@components/Key.jsx";
+import Key from '@components/Key.jsx'
 
 export default {
-  component: Key,
-};
+  component: Key
+}
 
 export const Normal = {
   args: {
-    name: "plus",
-    symbol: "+",
-  },
-};
+    name: 'plus',
+    symbol: '+'
+  }
+}

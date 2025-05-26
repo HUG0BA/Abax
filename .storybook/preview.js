@@ -1,6 +1,6 @@
 /** @type { import('@storybook/react').Preview } */
 
-import "@globalcss/index.css";
+import "@globalcss/index.css"
 const preview = {
   parameters: {
     layout: "centered",
@@ -11,6 +11,6 @@ const preview = {
       },
     },
   },
-};
+}
 
-export default preview;
+export default preview

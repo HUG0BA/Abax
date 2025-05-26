@@ -1,13 +1,13 @@
-import { useState, useRef, useEffect, createContext, useContext } from "react";
+import { useState, useEffect, createContext, useContext } from 'react'
 import {
   getWholePositionCount,
-  getDecimalPositionCount,
-} from "@utilities/number.js";
-import operationsDictionary from "@utilities/operationsDictionary.js";
+  getDecimalPositionCount
+} from '@utilities/number.js'
+import operationsDictionary from '@utilities/operationsDictionary.js'
 
 const AbaxContext = createContext({
   currentNumber: null,
-  currentAppendMode: "normal",
+  currentAppendMode: 'normal',
   decimalPositionValue: 0,
   currentDisplay: 0,
   positionalDisplayValue: 0,
@@ -18,112 +18,112 @@ const AbaxContext = createContext({
   onSignKeyClick: () => {},
   onDecimalKeyClick: () => {},
   currentResult: null,
-  currentOperation: "",
-});
+  currentOperation: ''
+})
 
 export const AbaxProvider = ({ children }) => {
-  const [currentResult, setCurrentResult] = useState(null);
-  const [currentNumber, setCurrentNumber] = useState(null);
-  const [currentDisplay, setCurrentDisplay] = useState(0);
-  const [decimalPositionValue, setDecimalPositionValue] = useState(0);
-  const [positionalDisplayValue, setPositionalDisplayValue] = useState(0);
-  const [currentOperation, setCurrentOperation] = useState("");
-  const [currentAppendMode, setCurrentAppendMode] = useState("normal");
+  const [currentResult, setCurrentResult] = useState(null)
+  const [currentNumber, setCurrentNumber] = useState(null)
+  const [currentDisplay, setCurrentDisplay] = useState(0)
+  const [decimalPositionValue, setDecimalPositionValue] = useState(0)
+  const [positionalDisplayValue, setPositionalDisplayValue] = useState(0)
+  const [currentOperation, setCurrentOperation] = useState('')
+  const [currentAppendMode, setCurrentAppendMode] = useState('normal')
 
   useEffect(() => {
-    setDecimalPositionValue(getDecimalPositionCount(currentNumber));
-  }, [currentNumber]);
+    setDecimalPositionValue(getDecimalPositionCount(currentNumber))
+  }, [currentNumber])
 
   useEffect(() => {
-    let display = 0;
+    let display = 0
     if (currentOperation && currentNumber !== null && currentResult !== null) {
       display = executeOperation(
         currentOperation,
         currentResult,
-        currentNumber,
-      );
+        currentNumber
+      )
     } else if (currentResult === null) {
-      display = currentNumber;
+      display = currentNumber
     } else if (currentNumber === null) {
-      display = currentResult;
+      display = currentResult
     }
-    setCurrentDisplay(display);
-  }, [currentOperation, currentNumber, currentResult]);
+    setCurrentDisplay(display)
+  }, [currentOperation, currentNumber, currentResult])
 
   useEffect(() => {
-    setPositionalDisplayValue(getDecimalPositionCount(currentDisplay));
-  }, [currentDisplay]);
+    setPositionalDisplayValue(getDecimalPositionCount(currentDisplay))
+  }, [currentDisplay])
 
   const onNumberKeyClick = (value) => {
     if (currentNumber === null && !currentOperation) {
-      setCurrentResult(null);
+      setCurrentResult(null)
     }
-    setCurrentNumber(value);
-  };
+    setCurrentNumber(value)
+  }
 
   const executeOperation = (currentOperation, currentResult, currentNumber) => {
     let result = operationsDictionary[currentOperation](
       currentResult,
-      currentNumber,
-    );
+      currentNumber
+    )
 
-    if (getDecimalPositionCount(result) > 0 && (result + "").length > 9) {
-      result = result.toFixed(8 - getWholePositionCount(result));
+    if (getDecimalPositionCount(result) > 0 && (result + '').length > 9) {
+      result = result.toFixed(8 - getWholePositionCount(result))
     } else if (result > 999999999 || result < 0) {
-      result = "error";
+      result = 'error'
     }
 
-    return result || null;
-  };
+    return result || null
+  }
 
   const onOperationKeyClick = (value) => {
     if (currentNumber === null && currentResult === null && !currentOperation) {
-      return;
+      return
     }
 
     if (currentNumber !== null && currentResult !== null) {
       setCurrentResult(
-        executeOperation(currentOperation, currentResult, currentNumber),
-      );
-      setCurrentNumber(null);
-      setCurrentAppendMode("normal");
+        executeOperation(currentOperation, currentResult, currentNumber)
+      )
+      setCurrentNumber(null)
+      setCurrentAppendMode('normal')
     } else if (currentNumber !== null) {
-      setCurrentResult(currentNumber);
-      setCurrentNumber(null);
+      setCurrentResult(currentNumber)
+      setCurrentNumber(null)
     }
-    setCurrentOperation(value);
-    setCurrentAppendMode("normal");
-  };
+    setCurrentOperation(value)
+    setCurrentAppendMode('normal')
+  }
 
   const onResultKeyClick = () => {
     if (currentNumber !== null && currentResult !== null && currentOperation) {
       const operationResult = executeOperation(
         currentOperation,
         currentResult,
-        currentNumber,
-      );
-      setCurrentResult(operationResult);
+        currentNumber
+      )
+      setCurrentResult(operationResult)
 
-      setCurrentOperation("");
-      setCurrentNumber(null);
-      setCurrentAppendMode("normal");
+      setCurrentOperation('')
+      setCurrentNumber(null)
+      setCurrentAppendMode('normal')
     }
-  };
+  }
 
   const onResetKeyClick = () => {
-    setCurrentNumber(null);
-    setCurrentResult(null);
-    setCurrentOperation("");
-    setCurrentAppendMode("normal");
-  };
+    setCurrentNumber(null)
+    setCurrentResult(null)
+    setCurrentOperation('')
+    setCurrentAppendMode('normal')
+  }
 
   const onSignKeyClick = () => {
     if (currentNumber !== null && Math.abs(currentNumber) <= currentResult) {
-      setCurrentNumber(currentNumber * -1);
+      setCurrentNumber(currentNumber * -1)
     }
-  };
+  }
 
-  const onDecimalKeyClick = () => setCurrentAppendMode("decimal");
+  const onDecimalKeyClick = () => setCurrentAppendMode('decimal')
 
   return (
     <AbaxContext.Provider
@@ -140,14 +140,14 @@ export const AbaxProvider = ({ children }) => {
         onSignKeyClick,
         onDecimalKeyClick,
         currentResult,
-        currentOperation,
+        currentOperation
       }}
     >
       {children}
     </AbaxContext.Provider>
-  );
-};
+  )
+}
 
-const useAbaxContext = () => useContext(AbaxContext);
+const useAbaxContext = () => useContext(AbaxContext)
 
-export default useAbaxContext;
+export default useAbaxContext

@@ -1,13 +1,13 @@
-import { AbaxProvider } from "@hooks/useAbaxContext";
-import KeyBoard from "@components/KeyBoard.jsx";
-import KeyBoardWithScreen from "@components/KeyBoardWithScreen";
-import FrameWithPositionalNotation from "@components/FrameWithPositionalNotation.jsx";
-import Frame from "@components/Frame.jsx";
-import style from "@pages/Landing.module.css";
+import { AbaxProvider } from '@hooks/useAbaxContext'
+import KeyBoard from '@components/KeyBoard.jsx'
+import KeyBoardWithScreen from '@components/KeyBoardWithScreen'
+import FrameWithPositionalNotation from '@components/FrameWithPositionalNotation.jsx'
+import Frame from '@components/Frame.jsx'
+import style from '@pages/Landing.module.css'
 
-import { positionValues } from "@assets/variables.js";
+import { positionValues } from '@assets/variables.js'
 
-function Landing() {
+function Landing () {
   return (
     <div className={style.normal}>
       <AbaxProvider>
@@ -15,7 +15,7 @@ function Landing() {
         <KeyBoardWithScreen />
       </AbaxProvider>
     </div>
-  );
+  )
 }
 
-export default Landing;
+export default Landing

@@ -1,16 +1,16 @@
-import Key from "@components/Key";
-import useAbaxContext from "@hooks/useAbaxContext";
+import Key from '@components/Key'
+import useAbaxContext from '@hooks/useAbaxContext'
 
-function DecimalKey({ name, symbol }) {
-  const { onDecimalKeyClick } = useAbaxContext();
+function DecimalKey ({ name, symbol }) {
+  const { onDecimalKeyClick } = useAbaxContext()
 
   return (
     <Key
       name={name}
       symbol={symbol}
-      onKeyClick={() => onDecimalKeyClick("decimal")}
+      onKeyClick={() => onDecimalKeyClick('decimal')}
     />
-  );
+  )
 }
 
-export default DecimalKey;
+export default DecimalKey

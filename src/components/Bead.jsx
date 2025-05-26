@@ -1,7 +1,7 @@
-import style from "@components/Bead.module.css";
+import style from '@components/Bead.module.css'
 
-function Bead({ variant }) {
-    return <div className={style[variant]}></div>;
+function Bead ({ variant }) {
+  return <div className={style[variant]} />
 }
 
-export default Bead;
+export default Bead
