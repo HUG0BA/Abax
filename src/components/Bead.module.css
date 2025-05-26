@@ -1,0 +1,27 @@
+.base {
+    width: 20px;
+    height: 32px;
+    border-radius: 72px 72px 72px 72px / 156px 156px 156px 156px;
+}
+
+.inactive {
+    composes: base;
+    background-color: blue;
+}
+
+.divider {
+    composes: base;
+    background-color: green;
+    margin-right: auto;
+}
+
+.finalizer {
+    composes: base;
+    background-color: purple;
+    margin-left: auto;
+}
+
+.active {
+    composes: base;
+    background-color: red;
+}

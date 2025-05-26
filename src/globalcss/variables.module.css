@@ -1,0 +1,5 @@
+:root {
+    --calculator-grid-areas: "c plusminus mod divi" "seven eight nine mul"
+        "four five six sub" "one two three plus" "zero zero decimal equals";
+    --position-notation-size: 48px;
+}

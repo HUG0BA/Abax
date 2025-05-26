@@ -1,0 +1,29 @@
+.normal {
+    width: fit-content;
+    --border-width: 44px;
+    position: relative;
+    padding: 96px 0;
+    border-color: burlywood;
+    border-left-width: var(--border-width);
+    border-left-style: solid;
+    border-right-width: var(--border-width);
+    border-right-style: solid;
+    border-radius: 28px;
+}
+
+.normal:before,
+.normal:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 24px;
+    background-color: rebeccapurple;
+}
+
+.normal:before {
+    top: 28px;
+}
+
+.normal:after {
+    bottom: 28px;
+}

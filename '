@@ -1,0 +1,53 @@
+import { useState, useEffect, createContext, useContext } from "react";
+import {
+  getDecimalPartAsString,
+  getDecimalPositionCount,
+} from "@utilities/number.js";
+
+const EMPTY_ABAX_NUMBER = 0;
+
+const AbaxContext = createContext({
+  currentNumber: EMPTY_ABAX_NUMBER,
+  setCurrentNumber: () => {},
+  setCurrentResult: () => {},
+  decimalPositionCount: EMPTY_ABAX_NUMBER,
+  setCurrentOperation: () => {},
+  currentAppendMode: "normal",
+});
+
+export const AbaxProvider = ({ children }) => {
+  const [currentResult, setCurrentResult] = useState(EMPTY_ABAX_NUMBER);
+  const [currentNumber, setCurrentNumber] = useState(EMPTY_ABAX_NUMBER);
+  const [decimalPositionCount, setDecimalPositionCount] =
+    useState(EMPTY_ABAX_NUMBER);
+  const [currentOperation, setCurrentOperation] = useState("");
+  const [currentAppendMode, setCurrentAppendMode] = useState("normal");
+
+  useEffect(() => {
+    setDecimalPositionCount(getDecimalPositionCount(currentNumber));
+  }, [currentNumber]);
+
+  const modifyCurrentNumber = (value) => setCurrentNumber(value);
+
+  const changeCurrentResult = (value) => setCurrentResult(value);
+
+  const changeCurrentOperation = (value) => setCurrentOperation(value);
+
+  return (
+    <AbaxContext.Provider
+      value={{
+        currentNumber,
+        modifyCurrentNumber,
+        currentAppendMode,
+        setCurrentOperation,
+        currentAppendMode,
+      }}
+    >
+      {children}
+    </AbaxContext.Provider>
+  );
+};
+
+const useAbaxContext = () => useContext(AbaxContext);
+
+export default useAbaxContext;

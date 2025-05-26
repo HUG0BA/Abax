@@ -1,0 +1,10 @@
+.normal {
+    display: grid;
+    grid-template-columns: repeat(4, 72px);
+    grid-template-rows: repeat(5, 72px);
+    grid-template-areas: var(--calculator-grid-areas);
+    column-gap: 12px;
+    row-gap: 12px;
+    justify-items: stretch;
+    align-items: stretch;
+}

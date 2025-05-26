@@ -1,0 +1,11 @@
+.normal {
+    position: relative;
+    display: inline-block;
+}
+
+.normal>div:nth-of-type(2) {
+    margin-top: 80px;
+    position: absolute;
+    top: 0;
+    right: -5%;
+}

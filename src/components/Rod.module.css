@@ -1,0 +1,7 @@
+.normal {
+    width: 448px;
+    height: 12px;
+    background-color: peru;
+    display: flex;
+    align-items: center;
+}

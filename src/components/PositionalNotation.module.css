@@ -1,0 +1,10 @@
+.normal {
+    text-align: center;
+    align-content: center;
+    height: var(--position-notation-size);
+    width: var(--position-notation-size);
+    background-color: sienna;
+    color: white;
+    border-radius: 16px;
+    flex-shrink: 0;
+}

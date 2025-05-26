@@ -1,0 +1,8 @@
+.vertical {
+    --gap-size: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-size);
+    height: calc(calc(var(--position-notation-size) + var(--gap-size)) * 9);
+    overflow-y: hidden;
+}
