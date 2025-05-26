@@ -1,4 +1,26 @@
 .normal {
     width: 100%;
     height: 100%;
+    background-color: transparent;
+    color: var(--vivid-sky-blue);
+    text-shadow: 0 0 8px var(--vivid-sky-blue);
+    border: 1px solid var(--vivid-sky-blue);
+    border-radius: 16px;
+    box-shadow:
+        inset 0 0 24px -8px var(--vivid-sky-blue),
+        2px 2px 32px -16px var(--vivid-sky-blue);
+}
+
+.normal:hover {
+    text-shadow: 0 0 1px var(--vivid-sky-blue);
+    box-shadow:
+        inset 0 0 32px -4px var(--vivid-sky-blue),
+        2px 2px 32px -4px var(--vivid-sky-blue);
+}
+
+.normal:active {
+    text-shadow: 0 0 1px var(--vivid-sky-blue);
+    box-shadow:
+        inset 0 0 32px var(--vivid-sky-blue),
+        2px 2px 32px var(--vivid-sky-blue);
 }

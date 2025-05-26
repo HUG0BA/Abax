@@ -3,8 +3,10 @@
     align-content: center;
     height: var(--position-notation-size);
     width: var(--position-notation-size);
-    background-color: sienna;
-    color: white;
+    color: var(--philippine-orange);
+    border: 2px solid var(--philippine-orange);
+    box-shadow: inset 0 0 32px var(--philippine-orange);
     border-radius: 16px;
+    font-weight: bold;
     flex-shrink: 0;
 }

@@ -2,4 +2,8 @@
     --calculator-grid-areas: "c plusminus mod divi" "seven eight nine mul"
         "four five six sub" "one two three plus" "zero zero decimal equals";
     --position-notation-size: 48px;
+    --vivid-sky-blue: #00d7ff;
+    --philippine-orange: #ff7300;
+    --electric-purple: #c100ff;
+    --eerie-black: #181425;
 }

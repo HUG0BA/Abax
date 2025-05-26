@@ -6,22 +6,36 @@
 
 .inactive {
     composes: base;
-    background-color: blue;
+    border: 3px solid var(--electric-purple);
+    box-shadow:
+        inset 0 0 16px var(--electric-purple),
+        0 0 16px var(--electric-purple);
 }
 
 .divider {
     composes: base;
-    background-color: green;
+    border: 3px solid var(--electric-purple);
+    box-shadow:
+        inset 0 0 16px var(--electric-purple),
+        0 0 16px var(--electric-purple);
+
     margin-right: auto;
 }
 
 .finalizer {
     composes: base;
-    background-color: purple;
+    border: 3px solid var(--philippine-orange);
+    box-shadow:
+        inset 0 0 16px var(--philippine-orange),
+        0 0 16px var(--philippine-orange);
+
     margin-left: auto;
 }
 
 .active {
     composes: base;
-    background-color: red;
+    border: 3px solid var(--philippine-orange);
+    box-shadow:
+        inset 0 0 16px var(--philippine-orange),
+        0 0 16px var(--philippine-orange);
 }

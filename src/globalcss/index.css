@@ -1,2 +1,6 @@
 @import url("@globalcss/reset.module.css");
 @import url("@globalcss/variables.module.css");
+
+body {
+    background-color: var(--eerie-black);
+}

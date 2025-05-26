@@ -1,7 +1,10 @@
 .normal {
     width: 448px;
     height: 12px;
-    background-color: peru;
     display: flex;
     align-items: center;
+    border: 1px solid var(--vivid-sky-blue);
+    box-shadow:
+        inset 0 0 8px var(--vivid-sky-blue),
+        0 0 16px var(--vivid-sky-blue);
 }

@@ -1,4 +1,34 @@
 .normal {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.normal>div:nth-child(1) {
+    border: 1px solid var(--vivid-sky-blue);
+    padding: 24px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    box-shadow:
+        inset 0 0 32px -12px var(--vivid-sky-blue),
+        2px 2px 32px -16px var(--vivid-sky-blue);
+}
+
+.normal>div:nth-child(1):hover {
+    box-shadow:
+        inset 0 0 32px -8px var(--vivid-sky-blue),
+        2px 2px 32px -8px var(--vivid-sky-blue);
+}
+
+.normal p {
+    color: var(--vivid-sky-blue);
+    text-shadow: 0 0 2px var(--vivid-sky-blue);
+}
+
+.normal p:nth-child(1) {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+}
+
+.normal p:nth-child(2) {
+    font-size: 1em;
 }

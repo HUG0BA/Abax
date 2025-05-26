@@ -61,12 +61,7 @@ const beadRods = [
   ],
 ];
 
-const positionValues = [
-  { id: 1, positionValue: "U" },
-  { id: 1, positionValue: "D" },
-  { id: 1, positionValue: "C" },
-  { id: 1, positionValue: "M" },
-];
+const positionValues = ["U", "D", "C", "M"];
 
 export const Normal = {
   args: {

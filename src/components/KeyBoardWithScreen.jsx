@@ -7,11 +7,14 @@ function KeyBoardWithScreen() {
     useAbaxContext();
 
   return (
-    <div className={style}>
-      <p>Display {currentDisplay}</p>
-      <p>
-        {currentResult ?? ""} {currentOperation} {currentNumber ?? ""}
-      </p>
+    <div className={style.normal}>
+      <div>
+        <p>Display {currentDisplay}</p>
+        <p>
+          {currentResult ?? ""} {currentOperation} {currentNumber ?? ""}
+        </p>
+      </div>
+
       <KeyBoard />
     </div>
   );
